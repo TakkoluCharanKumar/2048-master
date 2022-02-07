@@ -96,3 +96,9 @@ class InsideGame:
                 if(self.gridCells[i+1][j]==self.gridCells[i][j]):
                     return True
         return False
+    def check_status(self):
+        for i in range(self.n):
+            for j in range(self.n):
+                if(self.gridCells[i][j]==2048):
+                    return True
+        return False  
