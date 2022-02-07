@@ -168,3 +168,7 @@ class Game:
             time.sleep(0.1)
             if(self.inside.moved):
                 self.inside.random_cell()
+n=int(input("Enter the no of the grids:"))
+inside=InsideGame(n)
+x=Game(inside)
+x.start()
