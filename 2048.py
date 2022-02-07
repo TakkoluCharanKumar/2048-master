@@ -57,3 +57,15 @@ class InsideGame:
             print()
     def transpose(self):
         self.gridCells=[list(t) for t in zip(*self.gridCells)]
+    def slide(self):
+        self.slided=False
+        temp=[[0]*self.n for i in range(self.n)]
+        for i in range(self.n):
+            count=0
+            for j in range(self.n):
+                if(self.gridCells[i][j]!=0):
+                    temp[i][count]=self.gridCells[i][j]
+                    if count!=j:
+                        self.slided=True
+                    count+=1
+        self.gridCells=temp
