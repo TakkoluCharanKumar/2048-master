@@ -1,6 +1,8 @@
 import os
 import random
 import time
+import getkey
+
 class InsideGame:
     bg_color={
         '0':'\033[40m',
@@ -105,3 +107,8 @@ class InsideGame:
 class Game:
     def __init__(self,inside):
         self.inside=inside
+    def start(self):
+        self.inside.random_cell()
+        self.inside.random_cell()
+        print("1-Left\n2-Right\n3-Up\n4-Down")
+        self.play()
