@@ -101,4 +101,7 @@ class InsideGame:
             for j in range(self.n):
                 if(self.gridCells[i][j]==2048):
                     return True
-        return False  
+        return False
+class Game:
+    def __init__(self,inside):
+        self.inside=inside
