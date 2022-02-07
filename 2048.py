@@ -112,3 +112,16 @@ class Game:
         self.inside.random_cell()
         print("1-Left\n2-Right\n3-Up\n4-Down")
         self.play()
+    def play(self):
+        while(True):
+            self.inside.slided=False
+            self.inside.merged=False
+            self.inside.moved=False
+            os.system('clear')
+            self.inside.print_grid()
+            key=getkey.getkey()
+            if(key=='1' or key==getkey.keys.LEFT):
+                self.inside.slide()
+                self.inside.merge()
+                self.inside.moved=self.inside.slided or self.inside.merged
+                self.inside.slide()
