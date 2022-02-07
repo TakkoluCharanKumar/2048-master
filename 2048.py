@@ -78,3 +78,11 @@ class InsideGame:
                     self.gridCells[i][j+1]=0
                     self.score+=self.gridCells[i][j]
                     self.merged=True
+    def reverse(self):
+        for index in range(self.n):
+            i=0
+            j=self.n-1
+            while(i<j):
+                self.gridCells[index][i],self.gridCells[index][j]=self.gridCells[index][j],self.gridCells[index][i]
+                i+=1
+                j-=1
