@@ -132,4 +132,10 @@ class Game:
                 self.inside.moved=self.inside.slided or self.inside.merged
                 self.inside.slide()
                 self.inside.reverse()
-                
+            elif(key=='3' or key==getkey.keys.UP):
+                self.inside.transpose()
+                self.inside.slide()
+                self.inside.merge()
+                self.inside.moved=self.inside.slided or self.inside.merged
+                self.inside.slide()
+                self.inside.transpose()
