@@ -1,3 +1,6 @@
+import os
+import random
+import time
 class InsideGame:
     bg_color={
         '0':'\033[40m',
@@ -52,3 +55,5 @@ class InsideGame:
                 print(bg+fg+x+'\033[0m',end=" ")
             print()
             print()
+    def transpose(self):
+        self.gridCells=[list(t) for t in zip(*self.gridCells)]
