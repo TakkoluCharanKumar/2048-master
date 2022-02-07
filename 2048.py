@@ -152,3 +152,19 @@ class Game:
                 exit(0)
             else:
                 pass
+            if(self.inside.check_status()==True):
+                self.inside.print_grid()
+                print('\033[31m'+"won")
+                return
+            flag=0
+            for i in range(self.inside.n):
+                for j in range(self.inside.n):
+                    if(self.inside.gridCells[i][j]==0):
+                        flag=1
+                        break
+            if not(flag or self.inside.can_merge()):
+                print("Game Over")
+                return 
+            time.sleep(0.1)
+            if(self.inside.moved):
+                self.inside.random_cell()
