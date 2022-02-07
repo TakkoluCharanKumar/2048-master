@@ -69,3 +69,12 @@ class InsideGame:
                         self.slided=True
                     count+=1
         self.gridCells=temp
+    def merge(self):
+        self.merged=False
+        for i in range(self.n):
+            for j in range(self.n-1):
+                if(self.gridCells[i][j]==self.gridCells[i][j+1] and self.gridCells[i][j]!=0):
+                    self.gridCells[i][j]*=2
+                    self.gridCells[i][j+1]=0
+                    self.score+=self.gridCells[i][j]
+                    self.merged=True
