@@ -86,3 +86,13 @@ class InsideGame:
                 self.gridCells[index][i],self.gridCells[index][j]=self.gridCells[index][j],self.gridCells[index][i]
                 i+=1
                 j-=1
+    def can_merge(self):
+        for i in range(self.n):
+            for j in range(self.n-1):
+                if self.gridCells[i][j]==self.gridCells[i][j+1]:
+                    return True
+        for i in range(self.n-1):
+            for j in range(self.n):
+                if(self.gridCells[i+1][j]==self.gridCells[i][j]):
+                    return True
+        return False
